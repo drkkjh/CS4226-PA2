@@ -48,10 +48,10 @@ class Topology(Topo):
         self.addNode('r410', cls=FRRRouter, loopback="100.100.4.1/32")
 
         # Create hosts
-        self.addHost('h211', ip=h211_eth0, defaultRoute=f'via 10.2.1.254/24')
-        self.addHost('h311', ip=h311_eth0, defaultRoute=f'via 10.3.1.254/24')
-        self.addHost('h411', ip=h411_eth0, defaultRoute=f'via 10.4.1.126/25')
-        self.addHost('h412', ip=h412_eth0, defaultRoute=f'via 10.4.1.254/25')
+        self.addHost('h211', ip=h211_eth0, defaultRoute=f'via 10.2.1.254')
+        self.addHost('h311', ip=h311_eth0, defaultRoute=f'via 10.3.1.254')
+        self.addHost('h411', ip=h411_eth0, defaultRoute=f'via 10.4.1.126')
+        self.addHost('h412', ip=h412_eth0, defaultRoute=f'via 10.4.1.254')
 
         # Link hosts to routers
         self.addLink('r210', 'h211', intfName1="r210-eth0", params1={"ip": r210_eth0})
